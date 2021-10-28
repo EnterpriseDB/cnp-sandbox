@@ -1,0 +1,14 @@
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: {{.Release.Name }}
+  labels:
+    {{- include "cnp-sandbox.labels" . | nindent 4 }}
+spec:
+  selector:
+    matchExpressions:
+    - key: postgresql
+      operator: Exists
+  podMetricsEndpoints:
+  - port: metrics

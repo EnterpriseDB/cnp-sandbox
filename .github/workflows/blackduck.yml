@@ -1,0 +1,61 @@
+name: blackduck
+
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+
+env:
+  GOLANG_VERSION: "1.17.x"
+  GOPRIVATE: "github.com/EnterpriseDB"
+
+jobs:
+
+  duplicate_runs:
+    runs-on: ubuntu-20.04
+    name: Skip duplicate runs
+    outputs:
+      should_skip: ${{ steps.skip_check.outputs.should_skip }}
+    steps:
+      - id: skip_check
+        uses: fkirc/skip-duplicate-actions@v3.4.1
+        with:
+          concurrent_skipping: 'same_content'
+          skip_after_successful_duplicate: 'true'
+          paths_ignore: '["README.md", "docs/**"]'
+          do_not_skip: '["pull_request", "workflow_dispatch", "schedule"]'
+
+  blackduck-scan:
+    name: BlackDuck Scan
+    needs: duplicate_runs
+    if: ${{ needs.duplicate_runs.outputs.should_skip != 'true' }}
+    runs-on: ubuntu-20.04
+    steps:
+      -
+        name: Checkout code
+        uses: actions/checkout@v2.4.0
+      -
+        name: Set up JDK 8
+        uses: actions/setup-java@v2.3.1
+        with:
+          java-version: 8
+          distribution: 'zulu'
+      -
+        name: Get repository name
+        run: |
+          echo "REPO_NAME=$(echo ${{ github.repository }} | awk -F '/' '{print $2}')" >> $GITHUB_ENV
+      -
+        name: Configure git for private modules
+        run: git config --global url."https://x:${{ secrets.GH_API_TOKEN }}@github.com".insteadOf "https://github.com"
+      -
+        name: Install Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: ${{ env.GOLANG_VERSION }}
+      -
+        name: Synopsys Detect
+        uses: blackducksoftware/github-action@v2.2
+        with:
+          blackduck.url: ${{ secrets.BLACKDUCK_URL }}
+          blackduck.api.token: ${{ secrets.BLACKDUCK_API_TOKEN }}
+          args: '--detect.project.name="${{ env.REPO_NAME }}" --detect.project.version.name="CI/CD" --detect.risk.report.pdf=false --detect.excluded.detector.types="npm,pip,cpan,nuget,git,maven,lerna"'
