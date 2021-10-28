@@ -1,0 +1,29 @@
+# Default values for cnp-sandbox.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+#
+
+# -- here you can pass the whole values directly to the kube-prometheus-stack chart
+kube-prometheus-stack:
+  enabled: true
+  prometheus:
+    prometheusSpec:
+      podMonitorSelectorNilUsesHelmValues: false
+      ruleSelectorNilUsesHelmValues: false
+      serviceMonitorSelectorNilUsesHelmValues: false
+      probeSelectorNilUsesHelmValues: false
+  grafana:
+    enabled: true
+    # -- the grafana admin password
+    adminPassword: prom-operator
+  alertmanager:
+    enabled: false
+
+
+# -- here you can pass the whole values directly to the cloud-native-postgresql chart
+cloud-native-postgresql:
+  enabled: true
+  config:
+    create: true
+    data:
+      MONITORING_QUERIES_CONFIGMAP: default-monitoring-queries
