@@ -1,0 +1,68 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {
+        "cloud-native-postgresql": {
+            "type": "object",
+            "properties": {
+                "enabled": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "clusterSpec": {
+            "type": "object",
+            "properties": {
+                "instances": {
+                    "type": "integer"
+                },
+                "monitoring": {
+                    "type": "object",
+                    "properties": {
+                        "customQueriesConfigMap": {
+                            "type": "array"
+                        }
+                    }
+                },
+                "storage": {
+                    "type": "object",
+                    "properties": {
+                        "size": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "kube-prometheus-stack": {
+            "type": "object",
+            "properties": {
+                "enabled": {
+                    "type": "boolean"
+                },
+                "prometheus": {
+                    "type": "object",
+                    "properties": {
+                        "prometheusSpec": {
+                            "type": "object",
+                            "properties": {
+                                "podMonitorSelectorNilUsesHelmValues": {
+                                    "type": "boolean"
+                                },
+                                "probeSelectorNilUsesHelmValues": {
+                                    "type": "boolean"
+                                },
+                                "ruleSelectorNilUsesHelmValues": {
+                                    "type": "boolean"
+                                },
+                                "serviceMonitorSelectorNilUsesHelmValues": {
+                                    "type": "boolean"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,6 +1,6 @@
 apiVersion: v2
 name: cnp-playground
-description: A Helm chart for Kubernetes
+description: A playground for Cloud Native PostgreSQL
 
 # A chart can be either an 'application' or a 'library' chart.
 #
@@ -32,3 +32,15 @@ dependencies:
     version: "19.2.2"
     repository: https://prometheus-community.github.io/helm-charts
     condition: kube-prometheus-stack.enabled
+
+sources:
+  - https://github.com/EnterpriseDB/cnp-playground
+home: https://www.enterprisedb.com/products/postgresql-on-kubernetes-ha-clusters-k8s-containers-scalable
+maintainers:
+  - name: phisco
+    email: philippe.scorsolini@enterprisedb.com
+keywords:
+  - postgresql
+  - postgres
+  - database
+  - monitoring

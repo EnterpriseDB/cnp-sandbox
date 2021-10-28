@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-# here you can pass the whole values directly to the kube-prometheus-stack chart
+# -- here you can pass the whole values directly to the kube-prometheus-stack chart
 kube-prometheus-stack:
   enabled: true
   prometheus:
@@ -13,21 +13,21 @@ kube-prometheus-stack:
       probeSelectorNilUsesHelmValues: false
 
 
-# here you can pass the whole values directly to the cloud-native-postgresql chart
+# -- here you can pass the whole values directly to the cloud-native-postgresql chart
 cloud-native-postgresql:
   enabled: true
 
 
-# the spec for the cluster that should be created
+# -- the spec for the cluster that should be created
 clusterSpec:
   instances: 3
 
   storage:
     size: 1Gi
-  
+
   monitoring:
-  #any additional monitoring configmap will be added to the default one
+  # -- any additional monitoring configmap will be added to the default one
     customQueriesConfigMap: []
-      # the default one is
-      #- name: {{ .Release.Name }}-monitoring-queries
-        #key: custom-queries
+      #  the default one is
+      # - name: {{ .Release.Name }}-monitoring-queries
+      #   key: custom-queries
