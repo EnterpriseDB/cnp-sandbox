@@ -561,7 +561,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "max by (pod) (cnp_pg_settings_setting{name=\"shared_buffers\"}) * max by (pod) (cnp_pg_settings_setting{name=\"block_size\"})",
+          "expr": "max by (pod) (cnp_pg_settings_setting{name=\"shared_buffers\",namespace=~\"$namespace\",pod=~\"$cluster-.*\"}) * max by (pod) (cnp_pg_settings_setting{name=\"block_size\",namespace=~\"$namespace\",pod=~\"$cluster-.*\"})",
           "instant": true,
           "interval": "",
           "legendFormat": "{{pod}}",
