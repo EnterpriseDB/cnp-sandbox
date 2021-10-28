@@ -19,8 +19,9 @@ metadata:
   name: {{.Release.Name }}
 spec:
   selector:
-    matchLabels:
-      postgresql: {{ .Release.Name}}
+    matchExpressions:
+    - key: postgresql
+      operator: Exists
   podMetricsEndpoints:
   - port: metrics
 ---
