@@ -103,7 +103,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "kube_pod_container_status_ready{container=\"postgres\"}",
+          "expr": "kube_pod_container_status_ready{container=\"postgres\",namespace=~\"$namespace\",pod=~\"$cluster-.*\"}",
           "instant": true,
           "interval": "",
           "legendFormat": "{{pod}}",
@@ -177,7 +177,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "cnp_pg_replication_is_replicating",
+          "expr": "cnp_pg_replication_is_replicating{namespace=~\"$namespace\",pod=~\"$cluster-.*\"}",
           "instant": true,
           "interval": "",
           "legendFormat": "{{pod}}",
@@ -223,10 +223,7 @@
       },
       "id": 58,
       "options": {
-        "colorMode": "background",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "horizontal",
+        "orientation": "auto",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
@@ -234,22 +231,23 @@
           "fields": "",
           "values": false
         },
-        "text": {},
-        "textMode": "auto"
+        "showThresholdLabels": false,
+        "showThresholdMarkers": false,
+        "text": {}
       },
       "pluginVersion": "8.2.1",
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum by (pod) (cnp_backends_total)",
-          "instant": true,
+          "expr": "sum by (pod) (cnp_backends_total{namespace=~\"$namespace\",pod=~\"$cluster-.*\"})",
+          "instant": false,
           "interval": "",
           "legendFormat": "{{pod}}",
           "refId": "A"
         }
       ],
       "title": "Connections",
-      "type": "stat"
+      "type": "gauge"
     },
     {
       "datasource": null,
@@ -308,7 +306,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "100 * sum by (pod) (cnp_backends_total) / sum by (pod) (cnp_pg_settings_setting{name=\"max_connections\"})",
+          "expr": "100 * sum by (pod) (cnp_backends_total{namespace=~\"$namespace\",pod=~\"$cluster-.*\"}) / sum by (pod) (cnp_pg_settings_setting{name=\"max_connections\",namespace=~\"$namespace\",pod=~\"$cluster-.*\"})",
           "instant": true,
           "interval": "",
           "legendFormat": "{{pod}}",
@@ -373,7 +371,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "max by (pod) (cnp_pg_database_xid_age)",
+          "expr": "max by (pod) (cnp_pg_database_xid_age{namespace=~\"$namespace\",pod=~\"$cluster-.*\"})",
           "instant": true,
           "interval": "",
           "legendFormat": "{{pod}}",
@@ -445,7 +443,7 @@
       "targets": [
         {
           "exemplar": false,
-          "expr": "",
+          "expr": "max(cnp_collector_postgres_version{namespace=~\"$namespace\",pod=~\"$cluster-.*\"})",
           "format": "time_series",
           "hide": false,
           "instant": true,
@@ -505,7 +503,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "cnp_pg_settings_setting{name=\"max_connections\"}",
+          "expr": "cnp_pg_settings_setting{name=\"max_connections\",namespace=~\"$namespace\",pod=~\"$cluster-.*\"}",
           "instant": true,
           "interval": "",
           "legendFormat": "{{pod}}",
@@ -621,7 +619,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "cnp_pg_settings_setting{name=\"effective_cache_size\"}",
+          "expr": "cnp_pg_settings_setting{name=\"effective_cache_size\",namespace=~\"$namespace\",pod=~\"$cluster-.*\"}",
           "instant": true,
           "interval": "",
           "legendFormat": "{{pod}}",
@@ -679,7 +677,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "cnp_pg_settings_setting{name=\"work_mem\"}",
+          "expr": "cnp_pg_settings_setting{name=\"work_mem\",namespace=~\"$namespace\",pod=~\"$cluster-.*\"}",
           "instant": true,
           "interval": "",
           "legendFormat": "{{pod}}",
@@ -736,7 +734,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "cnp_pg_settings_setting{name=\"maintenance_work_mem\"}",
+          "expr": "cnp_pg_settings_setting{name=\"maintenance_work_mem\",namespace=~\"$namespace\",pod=~\"$cluster-.*\"}",
           "instant": true,
           "interval": "",
           "legendFormat": "{{pod}}",
@@ -793,7 +791,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "cnp_pg_settings_setting{name=\"random_page_cost\"}",
+          "expr": "cnp_pg_settings_setting{name=\"random_page_cost\",namespace=~\"$namespace\",pod=~\"$cluster-.*\"}",
           "instant": true,
           "interval": "",
           "legendFormat": "{{pod}}",
@@ -850,7 +848,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "cnp_pg_settings_setting{name=\"seq_page_cost\"}",
+          "expr": "cnp_pg_settings_setting{name=\"seq_page_cost\",namespace=~\"$namespace\",pod=~\"$cluster-.*\"}",
           "instant": true,
           "interval": "",
           "legendFormat": "{{pod}}",
@@ -943,7 +941,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(cnp_backends_total) by (pod)",
+          "expr": "sum(cnp_backends_total{namespace=~\"$namespace\",pod=~\"$cluster-.*\"}) by (pod)",
           "hide": false,
           "interval": "",
           "legendFormat": "total ({{pod}})",
@@ -951,7 +949,7 @@
         },
         {
           "exemplar": true,
-          "expr": "sum(cnp_backends_total) by (state, pod)",
+          "expr": "sum(cnp_backends_total{namespace=~\"$namespace\",pod=~\"$cluster-.*\"}) by (state, pod)",
           "interval": "",
           "legendFormat": "{{state}} ({{pod}})",
           "refId": "A"
@@ -1032,14 +1030,14 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "sum(rate(cnp_pg_stat_database_xact_commit[5m])) by (pod)",
+          "expr": "sum(rate(cnp_pg_stat_database_xact_commit{namespace=~\"$namespace\",pod=~\"$cluster-.*\"}[5m])) by (pod)",
           "interval": "",
           "legendFormat": "committed ({{pod}})",
           "refId": "A"
         },
         {
           "exemplar": true,
-          "expr": "sum(rate(cnp_pg_stat_database_xact_rollback[5m])) by (pod)",
+          "expr": "sum(rate(cnp_pg_stat_database_xact_rollback{namespace=~\"$namespace\",pod=~\"$cluster-.*\"}[5m])) by (pod)",
           "hide": false,
           "interval": "",
           "legendFormat": "rolled back ({{pod}})",
@@ -1123,7 +1121,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "max by (pod) (cnp_backends_max_tx_duration_seconds)",
+          "expr": "max by (pod) (cnp_backends_max_tx_duration_seconds{namespace=~\"$namespace\",pod=~\"$cluster-.*\"})",
           "interval": "",
           "legendFormat": "{{pod}}",
           "refId": "A"
@@ -1205,7 +1203,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "rate(cnp_pg_stat_database_deadlocks{datname=\"\"}[5m])",
+          "expr": "rate(cnp_pg_stat_database_deadlocks{datname=\"\",namespace=~\"$namespace\",pod=~\"$cluster-.*\"}[5m])",
           "hide": false,
           "instant": false,
           "interval": "",
@@ -1289,7 +1287,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "cnp_backends_waiting_total",
+          "expr": "cnp_backends_waiting_total{namespace=~\"$namespace\",pod=~\"$cluster-.*\"}",
           "interval": "",
           "legendFormat": "{{pod}}",
           "refId": "A"
@@ -1384,14 +1382,14 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "rate(cnp_pg_stat_database_tup_deleted{datname=\"\"}[5m])",
+          "expr": "rate(cnp_pg_stat_database_tup_deleted{datname=\"\",namespace=~\"$namespace\",pod=~\"$cluster-.*\"}[5m])",
           "interval": "",
           "legendFormat": "deleted ({{pod}})",
           "refId": "A"
         },
         {
           "exemplar": true,
-          "expr": "rate(cnp_pg_stat_database_tup_inserted{datname=\"\"}[5m])",
+          "expr": "rate(cnp_pg_stat_database_tup_inserted{datname=\"\",namespace=~\"$namespace\",pod=~\"$cluster-.*\"}[5m])",
           "hide": false,
           "interval": "",
           "legendFormat": "inserted ({{pod}})",
@@ -1399,7 +1397,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(cnp_pg_stat_database_tup_fetched{datname=\"\"}[5m])",
+          "expr": "rate(cnp_pg_stat_database_tup_fetched{datname=\"\",namespace=~\"$namespace\",pod=~\"$cluster-.*\"}[5m])",
           "hide": false,
           "interval": "",
           "legendFormat": "fetched ({{pod}})",
@@ -1407,7 +1405,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(cnp_pg_stat_database_tup_returned{datname=\"\"}[5m])",
+          "expr": "rate(cnp_pg_stat_database_tup_returned{datname=\"\",namespace=~\"$namespace\",pod=~\"$cluster-.*\"}[5m])",
           "hide": false,
           "interval": "",
           "legendFormat": "returned ({{pod}})",
@@ -1415,7 +1413,7 @@
         },
         {
           "exemplar": true,
-          "expr": "rate(cnp_pg_stat_database_tup_updated{datname=\"\"}[5m])",
+          "expr": "rate(cnp_pg_stat_database_tup_updated{datname=\"\",namespace=~\"$namespace\",pod=~\"$cluster-.*\"}[5m])",
           "hide": false,
           "interval": "",
           "legendFormat": "updated ({{pod}})",
@@ -1584,7 +1582,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "cnp_pg_database_size_bytes{datname!~\"template.*\",datname!=\"postgres\"}",
+          "expr": "cnp_pg_database_size_bytes{datname!~\"template.*\",datname!=\"postgres\",namespace=~\"$namespace\",pod=~\"$cluster-.*\"}",
           "interval": "",
           "legendFormat": "{{datname}} ({{pod}})",
           "refId": "A"
@@ -1666,7 +1664,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "rate(cnp_pg_stat_database_temp_bytes{datname=\"\"}[5m])",
+          "expr": "rate(cnp_pg_stat_database_temp_bytes{datname=\"\",namespace=~\"$namespace\",pod=~\"$cluster-.*\"}[5m])",
           "instant": false,
           "interval": "",
           "legendFormat": "{{pod}}",
@@ -1762,14 +1760,14 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "cnp_collector_pg_wal_archive_status{value=\"ready\"}",
+          "expr": "cnp_collector_pg_wal_archive_status{value=\"ready\",namespace=~\"$namespace\",pod=~\"$cluster-.*\"}",
           "interval": "",
           "legendFormat": "ready ({{pod}})",
           "refId": "A"
         },
         {
           "exemplar": true,
-          "expr": "cnp_collector_pg_wal_archive_status{value=\"done\"}",
+          "expr": "cnp_collector_pg_wal_archive_status{value=\"done\",namespace=~\"$namespace\",pod=~\"$cluster-.*\"}",
           "hide": false,
           "interval": "",
           "legendFormat": "done ({{pod}})",
@@ -1851,14 +1849,14 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "rate(cnp_pg_stat_archiver_archived_count[5m])",
+          "expr": "rate(cnp_pg_stat_archiver_archived_count{namespace=~\"$namespace\",pod=~\"$cluster-.*\"}[5m])",
           "interval": "",
           "legendFormat": "archived ({{pod}})",
           "refId": "A"
         },
         {
           "exemplar": true,
-          "expr": "rate(cnp_pg_stat_archiver_failed_count[5m])",
+          "expr": "rate(cnp_pg_stat_archiver_failed_count{namespace=~\"$namespace\",pod=~\"$cluster-.*\"}[5m])",
           "hide": false,
           "interval": "",
           "legendFormat": "failed ({{pod}})",
@@ -1942,7 +1940,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "cnp_pg_stat_archiver_seconds_since_last_archival",
+          "expr": "cnp_pg_stat_archiver_seconds_since_last_archival{namespace=~\"$namespace\",pod=~\"$cluster-.*\"}",
           "interval": "",
           "legendFormat": "age ({{pod}})",
           "refId": "A"
@@ -2042,9 +2040,9 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "cnp_pg_replication_lag",
+          "expr": "cnp_pg_replication_lag{namespace=~\"$namespace\",pod=~\"$cluster-.*\"}",
           "interval": "",
-          "legendFormat": "lag ({{pod}})",
+          "legendFormat": "{{pod}}",
           "refId": "A"
         }
       ],
@@ -2124,10 +2122,10 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "cnp_pg_stat_replication_write_lag_seconds",
+          "expr": "cnp_pg_stat_replication_write_lag_seconds{namespace=~\"$namespace\",pod=~\"$cluster-.*\"}",
           "instant": false,
           "interval": "",
-          "legendFormat": "lag ({{application_name}})",
+          "legendFormat": "{{application_name}}",
           "refId": "A"
         }
       ],
@@ -2207,10 +2205,10 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "cnp_pg_stat_replication_flush_lag_seconds",
+          "expr": "cnp_pg_stat_replication_flush_lag_seconds{namespace=~\"$namespace\",pod=~\"$cluster-.*\"}",
           "instant": false,
           "interval": "",
-          "legendFormat": "lag ({{application_name}})",
+          "legendFormat": "{{application_name}}",
           "refId": "A"
         }
       ],
@@ -2291,9 +2289,9 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "cnp_pg_stat_replication_replay_lag_seconds",
+          "expr": "cnp_pg_stat_replication_replay_lag_seconds{namespace=~\"$namespace\",pod=~\"$cluster-.*\"}",
           "interval": "",
-          "legendFormat": "lag ({{application_name}})",
+          "legendFormat": "{{application_name}}",
           "refId": "A"
         }
       ],
@@ -2306,7 +2304,62 @@
   "style": "dark",
   "tags": [],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": "default",
+          "value": "default"
+        },
+        "datasource": null,
+        "definition": "cnp_collector_up",
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "namespace",
+        "options": [],
+        "query": {
+          "query": "cnp_collector_up",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "/namespace=\"(?<text>[^\"]+)|chip=\"(?<value>[^\"]+)/g",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": "cnp-playground",
+          "value": "cnp-playground"
+        },
+        "datasource": null,
+        "definition": "cnp_collector_up",
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "cluster",
+        "options": [],
+        "query": {
+          "query": "cnp_collector_up",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "/cluster=\"(?<text>[^\"]+)|chip=\"(?<value>[^\"]+)/g",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
+      }
+    ]
   },
   "time": {
     "from": "now-3h",

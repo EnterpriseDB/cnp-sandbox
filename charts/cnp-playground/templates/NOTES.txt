@@ -1,7 +1,7 @@
 {{- if and (.Values.dependenciesOnly) (.Release.IsInstall) -}}
 Now run:
 
-helm upgrade --install --set dependenciesOnly=false {{ .Release.Name }} cnp-bench
+helm upgrade --install --set dependenciesOnly=false {{ .Release.Name }} <PATH_TO_CHART>
 {{- else -}}
 Now you can access to Grafana with the following credentials:
 

@@ -4,6 +4,7 @@
 
 # here you can pass the whole values directly to the kube-prometheus-stack chart
 kube-prometheus-stack:
+  enabled: true
   prometheus:
     prometheusSpec:
       podMonitorSelectorNilUsesHelmValues: false
@@ -13,7 +14,8 @@ kube-prometheus-stack:
 
 
 # here you can pass the whole values directly to the cloud-native-postgresql chart
-#cloud-native-postgresql:
+cloud-native-postgresql:
+  enabled: true
 
 
 # the spec for the cluster that should be created

@@ -27,6 +27,8 @@ dependencies:
   - name: cloud-native-postgresql
     version: "0.7.2"
     repository: https://enterprisedb.github.io/cloud-native-postgresql-helm/
+    condition: cloud-native-postgresql.enabled
   - name: kube-prometheus-stack
     version: "19.2.2"
     repository: https://prometheus-community.github.io/helm-charts
+    condition: kube-prometheus-stack.enabled
