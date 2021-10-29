@@ -1,8 +1,10 @@
-{{- if and (not .Values.dependenciesOnly) (not .Release.IsInstall) -}}
+{{- if not .Values.dependenciesOnly -}}
 apiVersion: postgresql.k8s.enterprisedb.io/v1
 kind: Cluster
 metadata:
   name: {{ .Release.Name }}
+  labels:
+    {{- include "cnp-playground.labels" . | nindent 4 }}
 spec:
 {{ .Values.clusterSpec | toYaml | indent 2 }}
   monitoring:
@@ -17,6 +19,8 @@ apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
 metadata:
   name: {{.Release.Name }}
+  labels:
+    {{- include "cnp-playground.labels" . | nindent 4 }}
 spec:
   selector:
     matchExpressions:
@@ -31,6 +35,7 @@ metadata:
   name: {{ .Release.Name }}-monitoring-queries
   labels:
     k8s.enterprisedb.io/reload: ""
+    {{- include "cnp-playground.labels" . | nindent 4 }}
 data:
   custom-queries: |
     backends:

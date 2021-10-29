@@ -22,6 +22,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": null,
   "graphTooltip": 0,
+  "iteration": 1635495685924,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -177,7 +178,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "cnp_pg_replication_is_replicating{namespace=~\"$namespace\",pod=~\"$cluster-.*\"}",
+          "expr": "1 - cnp_pg_replication_in_recovery{namespace=~\"$namespace\",pod=~\"$cluster-.*\"} + cnp_pg_replication_is_replicating{namespace=~\"$namespace\",pod=~\"$cluster-.*\"}",
           "instant": true,
           "interval": "",
           "legendFormat": "{{pod}}",
@@ -2362,7 +2363,7 @@
     ]
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {

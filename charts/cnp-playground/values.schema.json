@@ -34,11 +34,22 @@
                 }
             }
         },
+        "dependenciesOnly": {
+            "type": "boolean"
+        },
         "kube-prometheus-stack": {
             "type": "object",
             "properties": {
                 "enabled": {
                     "type": "boolean"
+                },
+                "grafana": {
+                    "type": "object",
+                    "properties": {
+                        "adminPassword": {
+                            "type": "string"
+                        }
+                    }
                 },
                 "prometheus": {
                     "type": "object",
