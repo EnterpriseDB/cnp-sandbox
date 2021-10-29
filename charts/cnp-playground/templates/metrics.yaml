@@ -8,13 +8,6 @@ metadata:
     {{- include "cnp-playground.labels" . | nindent 4 }}
 data:
   custom-queries: |
-    connected_replicas:
-      query: "SELECT count(*) AS total
-              FROM pg_stat_replication"
-      metrics:
-        - total:
-            usage: "GAUGE"
-            description: "Number of standbys connected to the cluster"
     backends:
       query: |
        SELECT sa.datname
@@ -121,7 +114,8 @@ data:
                 EXTRACT(EPOCH FROM (now() - pg_catalog.pg_last_xact_replay_timestamp())))
               END AS lag,
               pg_catalog.pg_is_in_recovery() AS in_recovery,
-              EXISTS (TABLE pg_stat_wal_receiver) AS is_replicating"
+              EXISTS (TABLE pg_stat_wal_receiver) AS is_wal_receiver_up,
+              (SELECT count(*) FROM pg_stat_replication) AS streaming_replicas"
       metrics:
         - lag:
             usage: "GAUGE"
@@ -129,9 +123,12 @@ data:
         - in_recovery:
             usage: "GAUGE"
             description: "Whether the instance is in recovery"
-        - is_replicating:
+        - is_wal_receiver_up:
             usage: "GAUGE"
             description: "Whether the instance wal_receiver is up"
+        - streaming_replicas:
+            usage: "GAUGE"
+            description: "Number of streaming replicas connected to the instance"
 
     pg_replication_slots:
       query: "SELECT slot_name, database, active, pg_catalog.pg_wal_lsn_diff(pg_catalog.pg_current_wal_lsn(), restart_lsn) FROM pg_catalog.pg_replication_slots"
@@ -542,3 +539,4 @@ data:
         - setting:
             usage: "GAUGE"
             description: "Setting value"
+
