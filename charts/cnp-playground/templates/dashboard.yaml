@@ -1,4 +1,3 @@
-{{- if not .Values.dependenciesOnly -}}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -9,4 +8,3 @@ metadata:
 data:
   cnp.json: |-
 {{ .Files.Get "dashboard.json" | indent 6 }}
-{{ end -}}

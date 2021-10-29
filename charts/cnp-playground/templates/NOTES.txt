@@ -1,16 +1,32 @@
-{{- if .Values.dependenciesOnly -}}
-Now run:
+You can now deploy a cluster as follows:
 
-helm upgrade --install --set dependenciesOnly=false {{ .Release.Name }} <PATH_TO_CHART>
-{{- else -}}
-Now you can access to Grafana with the following credentials:
+kubectl apply -f - <<EOF
+---
+apiVersion: postgresql.k8s.enterprisedb.io/v1
+kind: Cluster
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  instances: 3
+
+  storage:
+    size: 1Gi
+
+  monitoring:
+    customQueriesConfigMap:
+      - name: {{ .Release.Name }}-monitoring-queries
+        key: custom-queries
+EOF
+
+And access Grafana with the following credentials:
 
 username: "admin"
 password: "{{ index .Values "kube-prometheus-stack" "grafana" "adminPassword" }}"
 
-by executing the following command:
+By executing the following command:
 
 kubectl port-forward svc/{{.Release.Name}}-grafana 3000:80
 
-and going to: http://localhost:3000
-{{- end -}}
+and going to:
+
+http://localhost:3000

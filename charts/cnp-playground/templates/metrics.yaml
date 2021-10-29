@@ -1,33 +1,3 @@
-{{- if not .Values.dependenciesOnly -}}
-apiVersion: postgresql.k8s.enterprisedb.io/v1
-kind: Cluster
-metadata:
-  name: {{ .Release.Name }}
-  labels:
-    {{- include "cnp-playground.labels" . | nindent 4 }}
-spec:
-{{ .Values.clusterSpec | toYaml | indent 2 }}
-  monitoring:
-    customQueriesConfigMap:
-      - name: {{ .Release.Name }}-monitoring-queries
-        key: custom-queries
-{{ range .Values.clusterSpec.monitoring.customQueriesConfigMap }}
-      - .
-{{ end }}
----
-apiVersion: monitoring.coreos.com/v1
-kind: PodMonitor
-metadata:
-  name: {{.Release.Name }}
-  labels:
-    {{- include "cnp-playground.labels" . | nindent 4 }}
-spec:
-  selector:
-    matchExpressions:
-    - key: postgresql
-      operator: Exists
-  podMetricsEndpoints:
-  - port: metrics
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -38,6 +8,13 @@ metadata:
     {{- include "cnp-playground.labels" . | nindent 4 }}
 data:
   custom-queries: |
+    connected_replicas:
+      query: "SELECT count(*) AS total
+              FROM pg_stat_replication"
+      metrics:
+        - total:
+            usage: "GAUGE"
+            description: "Number of standbys connected to the cluster"
     backends:
       query: |
        SELECT sa.datname
@@ -565,4 +542,3 @@ data:
         - setting:
             usage: "GAUGE"
             description: "Setting value"
-{{- end -}}

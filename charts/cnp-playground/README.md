@@ -28,10 +28,7 @@ A playground for Cloud Native PostgreSQL
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | cloud-native-postgresql | object | `{"enabled":true}` | here you can pass the whole values directly to the cloud-native-postgresql chart |
-| clusterSpec | object | `{"instances":3,"monitoring":{"customQueriesConfigMap":[]},"storage":{"size":"1Gi"}}` | the spec for the cluster that should be created |
-| clusterSpec.monitoring.customQueriesConfigMap | list | `[]` | any additional monitoring configmap will be added to the default one |
-| dependenciesOnly | bool | `true` | whether dependencies only should be installed |
-| kube-prometheus-stack | object | `{"enabled":true,"grafana":{"adminPassword":"prom-operator"},"prometheus":{"prometheusSpec":{"podMonitorSelectorNilUsesHelmValues":false,"probeSelectorNilUsesHelmValues":false,"ruleSelectorNilUsesHelmValues":false,"serviceMonitorSelectorNilUsesHelmValues":false}}}` | here you can pass the whole values directly to the kube-prometheus-stack chart |
+| kube-prometheus-stack | object | `{"alertmanager":{"enabled":false},"enabled":true,"grafana":{"adminPassword":"prom-operator","enabled":true},"prometheus":{"prometheusSpec":{"podMonitorSelectorNilUsesHelmValues":false,"probeSelectorNilUsesHelmValues":false,"ruleSelectorNilUsesHelmValues":false,"serviceMonitorSelectorNilUsesHelmValues":false}}}` | here you can pass the whole values directly to the kube-prometheus-stack chart |
 | kube-prometheus-stack.grafana.adminPassword | string | `"prom-operator"` | the grafana admin password |
 
 ----------------------------------------------

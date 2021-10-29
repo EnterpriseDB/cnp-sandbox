@@ -10,36 +10,17 @@
                 }
             }
         },
-        "clusterSpec": {
-            "type": "object",
-            "properties": {
-                "instances": {
-                    "type": "integer"
-                },
-                "monitoring": {
-                    "type": "object",
-                    "properties": {
-                        "customQueriesConfigMap": {
-                            "type": "array"
-                        }
-                    }
-                },
-                "storage": {
-                    "type": "object",
-                    "properties": {
-                        "size": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
-        },
-        "dependenciesOnly": {
-            "type": "boolean"
-        },
         "kube-prometheus-stack": {
             "type": "object",
             "properties": {
+                "alertmanager": {
+                    "type": "object",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean"
+                        }
+                    }
+                },
                 "enabled": {
                     "type": "boolean"
                 },
@@ -48,6 +29,9 @@
                     "properties": {
                         "adminPassword": {
                             "type": "string"
+                        },
+                        "enabled": {
+                            "type": "boolean"
                         }
                     }
                 },

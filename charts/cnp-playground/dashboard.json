@@ -2336,7 +2336,7 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "cnp-playground",
           "value": "cnp-playground"
         },
@@ -2372,5 +2372,5 @@
   "timezone": "",
   "title": "Cloud Native PostgreSQL",
   "uid": "z7FCA4Nnk",
-  "version": 2
+  "version": 1
 }
