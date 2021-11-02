@@ -28,4 +28,4 @@ playground-deploy-dev: ## Installs cnp-playground chart with a development versi
 .PHONY: playground-uninstall
 playground-uninstall: ## Uninstalls cnp-playground chart if present
 	@helm uninstall cnp-playground
-
+	@kubectl delete cluster cnp-playground
