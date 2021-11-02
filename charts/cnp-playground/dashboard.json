@@ -22,7 +22,7 @@
   "fiscalYearStartMonth": 0,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1635519313508,
+  "iteration": 1635849431168,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -3493,7 +3493,7 @@
           "refId": "StandardVariableQuery"
         },
         "refresh": 1,
-        "regex": "/namespace=\"(?<text>[^\"]+)|chip=\"(?<value>[^\"]+)/g",
+        "regex": "/namespace=\"(?<text>[^\"]+)/g",
         "skipUrlSync": false,
         "sort": 0,
         "type": "query"
@@ -3506,7 +3506,7 @@
           "value": "cnp-playground"
         },
         "datasource": null,
-        "definition": "cnp_collector_up",
+        "definition": "cnp_collector_up{namespace=~\"$namespace\"}",
         "description": null,
         "error": null,
         "hide": 0,
@@ -3516,11 +3516,11 @@
         "name": "cluster",
         "options": [],
         "query": {
-          "query": "cnp_collector_up",
+          "query": "cnp_collector_up{namespace=~\"$namespace\"}",
           "refId": "StandardVariableQuery"
         },
         "refresh": 1,
-        "regex": "/cluster=\"(?<text>[^\"]+)|chip=\"(?<value>[^\"]+)/g",
+        "regex": "/cluster=\"(?<text>[^\"]+)/g",
         "skipUrlSync": false,
         "sort": 1,
         "type": "query"
@@ -3568,5 +3568,5 @@
   "timezone": "",
   "title": "Cloud Native PostgreSQL",
   "uid": "z7FCA4Nnk",
-  "version": 7
+  "version": 8
 }
