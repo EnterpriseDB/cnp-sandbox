@@ -22,5 +22,6 @@ jobs:
 
       - name: Deploy using helm chart
         run: |
+          helm dependency update charts/cnp-playground
           helm upgrade --install --set dependenciesOnly=true cnp-playground charts/cnp-playground --wait --atomic
           helm upgrade --install --set dependenciesOnly=false cnp-playground charts/cnp-playground --wait --atomic
