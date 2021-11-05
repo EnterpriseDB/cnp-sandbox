@@ -1,6 +1,6 @@
-# Playground for Cloud Native PostgreSQL
+# Sandbox for Cloud Native PostgreSQL
 
-Cloud Native PostgreSQL Playground, aka `cnp-playground`, is a Helm chart that
+Cloud Native PostgreSQL Sandbox, aka `cnp-sandbox`, is a Helm chart that
 sets up the following components inside a Kubernetes cluster:
 
 - [Prometheus](https://prometheus.io/)
@@ -8,11 +8,11 @@ sets up the following components inside a Kubernetes cluster:
 - [Cloud Native PostgreSQL (CNP)](https://docs.enterprisedb.io/) by [EDB](https://enterprisedb.com/),
   a Kubernetes operator for [PostgreSQL](https://www.postgresql.org/) and
   [EDB Postgres Advanced](https://www.enterprisedb.com/products/edb-postgres-advanced-server-secure-ha-oracle-compatible), with:
-    - a selection of PostgreSQL metrics for the native Prometheus exporter in CNP (see the [`metrics.yaml`](charts/cnp-playground/templates/metrics.yaml) template file)
+    - a selection of PostgreSQL metrics for the native Prometheus exporter in CNP (see the [`metrics.yaml`](charts/cnp-sandbox/templates/metrics.yaml) template file)
     - a [custom Grafana dashboard](charts/dashboard.json) developed by EDB for Cloud Native PostgreSQL
 
-**IMPORTANT:** `cnp-playground` must be run in a staging or pre-production
-environment. Do not use `cnp-playground` in a production environment, as we
+**IMPORTANT:** `cnp-sandbox` must be run in a staging or pre-production
+environment. Do not use `cnp-sandbox` in a production environment, as we
 expect that Prometheus and Grafana are already part of that infrastructure:
 there you can install Cloud Native PostgreSQL, the suggested metrics and the
 provided Grafana dashboard.
@@ -26,19 +26,19 @@ provided Grafana dashboard.
 
 ## Deployment
 
-You can deploy Cloud Native PostgreSQL Playground with:
+You can deploy Cloud Native PostgreSQL Sandbox with:
 
 ```console
-make playground-deploy
+make sandbox-deploy
 ```
 
 Then simply follow the instructions that will appear on the terminal once the
 installation is completed.
 
-You can remove the installed playground by running:
+You can remove the installed sandbox by running:
 
 ```console
-make playground-uninstall
+make sandbox-uninstall
 ```
 
 ## Monitoring

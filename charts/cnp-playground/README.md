@@ -1,8 +1,8 @@
-# cnp-playground
+# cnp-sandbox
 
 ![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.16.0](https://img.shields.io/badge/AppVersion-1.16.0-informational?style=flat-square)
 
-A playground for Cloud Native PostgreSQL
+A sandbox for Cloud Native PostgreSQL
 
 **Homepage:** <https://www.enterprisedb.com/products/postgresql-on-kubernetes-ha-clusters-k8s-containers-scalable>
 
@@ -14,7 +14,7 @@ A playground for Cloud Native PostgreSQL
 
 ## Source Code
 
-* <https://github.com/EnterpriseDB/cnp-playground>
+* <https://github.com/EnterpriseDB/cnp-sandbox>
 
 ## Requirements
 

@@ -3502,8 +3502,8 @@
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "cnp-playground",
-          "value": "cnp-playground"
+          "text": "cnp-sandbox",
+          "value": "cnp-sandbox"
         },
         "datasource": null,
         "definition": "cnp_collector_up{namespace=~\"$namespace\"}",
