@@ -45,3 +45,13 @@ make playground-uninstall
 
 From the Grafana interface, you can find the dashboard by selecting: `Dashboards` > `Manage` > `Cloud Native PostgresSQL`.
 
+## Contributors
+
+- [Armando Ruocco](https://github.com/armru)
+- [Dave Page](https://github.com/dpage-edb)
+- [Doug Ortiz](https://github.com/dougortiz)
+- [Leonardo Cecchi](https://github.com/leonardoce)
+- [Philippe Scorsolini](https://github.com/phisco)
+- [Vik Fearing](https://github.com/vik-fearing-edb)
+
+(alphabetically sorted)
