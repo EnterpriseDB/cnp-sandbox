@@ -5,7 +5,7 @@ metadata:
   name: {{ .Release.Name }}-monitoring-queries
   labels:
     k8s.enterprisedb.io/reload: ""
-    {{- include "cnp-playground.labels" . | nindent 4 }}
+    {{- include "cnp-sandbox.labels" . | nindent 4 }}
 data:
   custom-queries: |
     backends:

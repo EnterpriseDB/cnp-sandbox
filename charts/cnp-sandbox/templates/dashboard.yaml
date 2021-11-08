@@ -4,7 +4,7 @@ metadata:
   name: {{ .Release.Name }}-cnp-dashboard
   labels:
     grafana_dashboard: "1"
-    {{- include "cnp-playground.labels" . | nindent 4 }}
+    {{- include "cnp-sandbox.labels" . | nindent 4 }}
 data:
   cnp.json: |-
 {{ .Files.Get "dashboard.json" | indent 6 }}
