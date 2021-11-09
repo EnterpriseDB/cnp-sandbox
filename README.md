@@ -50,17 +50,6 @@ From the Grafana interface, you can find the dashboard by selecting: `Dashboards
 Please read the [code of conduct](CODE-OF-CONDUCT.md) and the
 [guidelines](CONTRIBUTING.md) to contribute to the project.
 
-Here is a list of current contributors to `cnp-sandbox` (in alphabetical order):
-
-- [Armando Ruocco](https://github.com/armru)
-- [Dave Page](https://github.com/dpage-edb)
-- [Doug Ortiz](https://github.com/dougortiz)
-- [Leonardo Cecchi](https://github.com/leonardoce)
-- [Philippe Scorsolini](https://github.com/phisco)
-- [Vik Fearing](https://github.com/vik-fearing-edb)
-
-(alphabetically sorted)
-
 ## Disclaimer
 
 `cnp-sandbox` is open source software and comes "as is". Please carefully

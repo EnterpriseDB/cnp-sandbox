@@ -20,3 +20,15 @@ Please:
 3. Submit a pull request
 
 Thank you.
+
+## Contributors
+
+Here is a list of current contributors to `cnp-sandbox` (in alphabetical order):
+
+- [Armando Ruocco](https://github.com/armru)
+- [Dave Page](https://github.com/dpage-edb)
+- [Doug Ortiz](https://github.com/dougortiz)
+- [Leonardo Cecchi](https://github.com/leonardoce)
+- [Philippe Scorsolini](https://github.com/phisco)
+- [Vik Fearing](https://github.com/vik-fearing-edb)
+
