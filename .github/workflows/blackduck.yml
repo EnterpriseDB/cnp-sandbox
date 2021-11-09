@@ -54,6 +54,8 @@ jobs:
           go-version: ${{ env.GOLANG_VERSION }}
       -
         name: Synopsys Detect
-        uses: blackducksoftware/github-action@2.1
+        uses: blackducksoftware/github-action@v2.2
         with:
-          args: '--blackduck.url="${{ secrets.BLACKDUCK_URL }}" --blackduck.api.token="${{ secrets.BLACKDUCK_API_TOKEN }}" --detect.project.name="${{ env.REPO_NAME }}" --detect.project.version.name="CI/CD" --detect.risk.report.pdf=false --detect.excluded.detector.types="npm,pip,cpan,nuget,git,maven,lerna"'
+          blackduck.url: ${{ secrets.BLACKDUCK_URL }}
+          blackduck.api.token: ${{ secrets.BLACKDUCK_API_TOKEN }}
+          args: '--detect.project.name="${{ env.REPO_NAME }}" --detect.project.version.name="CI/CD" --detect.risk.report.pdf=false --detect.excluded.detector.types="npm,pip,cpan,nuget,git,maven,lerna"'
