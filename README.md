@@ -53,6 +53,19 @@ You can use `cnp-sandbox` in conjuction with
 [`cnp-bench`](https://github.com/EnterpriseDB/cnp-bench) to benchmark your
 PostgreSQL environment and observe its behaviour in real-time.
 
+## Contributing
+
+Please read the [code of conduct](CODE-OF-CONDUCT.md) and the
+[guidelines](CONTRIBUTING.md) to contribute to the project.
+
+## Disclaimer
+
+`cnp-sandbox` is open source software and comes "as is". Please carefully
+read the [license](LICENSE) before you use this software, in particular
+the "Disclaimer of Warranty" and "Limitation of Liability" items.
+
 ## Copyright
+
+`cnp-sandbox` is distributed under Apache License 2.0.
 
 Copyright (C) 2021 EnterpriseDB Corporation.

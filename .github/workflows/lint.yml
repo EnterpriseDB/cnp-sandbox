@@ -40,4 +40,4 @@ jobs:
           helm dependency update charts/cnp-sandbox
           helm repo add cnp https://enterprisedb.github.io/cloud-native-postgresql-helm/
           helm repo add prometheus https://prometheus-community.github.io/helm-charts
-          ct lint --target-branch=main
+          ct lint --target-branch=main --check-version-increment=false
