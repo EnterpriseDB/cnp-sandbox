@@ -5,6 +5,22 @@
         "cloud-native-postgresql": {
             "type": "object",
             "properties": {
+                "config": {
+                    "type": "object",
+                    "properties": {
+                        "create": {
+                            "type": "boolean"
+                        },
+                        "data": {
+                            "type": "object",
+                            "properties": {
+                                "MONITORING_QUERIES_CONFIGMAP": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
                 "enabled": {
                     "type": "boolean"
                 }

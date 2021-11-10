@@ -16,7 +16,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ .Release.Name }}-monitoring-queries
+  name: default-monitoring-queries
   labels:
     k8s.enterprisedb.io/reload: ""
     {{- include "cnp-sandbox.labels" . | nindent 4 }}

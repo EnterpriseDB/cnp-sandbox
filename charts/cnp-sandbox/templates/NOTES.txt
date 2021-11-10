@@ -12,10 +12,12 @@ spec:
   storage:
     size: 1Gi
 
+{{- if not (index .Values "cloud-native-postgresql" "enabled") }}
   monitoring:
     customQueriesConfigMap:
-      - name: {{ .Release.Name }}-monitoring-queries
+      - name: default-monitoring-queries
         key: custom-queries
+{{- end }}
 EOF
 
 And access Grafana with the following credentials:
