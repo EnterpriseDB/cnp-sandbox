@@ -45,13 +45,19 @@ make sandbox-uninstall
 
 From the Grafana interface, you can find the dashboard by selecting: `Dashboards` > `Manage` > `Cloud Native PostgreSQL`.
 
-## Contributors
+## Contributing
 
-- [Armando Ruocco](https://github.com/armru)
-- [Dave Page](https://github.com/dpage-edb)
-- [Doug Ortiz](https://github.com/dougortiz)
-- [Leonardo Cecchi](https://github.com/leonardoce)
-- [Philippe Scorsolini](https://github.com/phisco)
-- [Vik Fearing](https://github.com/vik-fearing-edb)
+Please read the [code of conduct](CODE-OF-CONDUCT.md) and the
+[guidelines](CONTRIBUTING.md) to contribute to the project.
 
-(alphabetically sorted)
+## Disclaimer
+
+`cnp-sandbox` is open source software and comes "as is". Please carefully
+read the [license](LICENSE) before you use this software, in particular
+the "Disclaimer of Warranty" and "Limitation of Liability" items.
+
+## Copyright
+
+`cnp-sandbox` is distributed under Apache License 2.0.
+
+Copyright (C) 2021 EnterpriseDB Corporation.
