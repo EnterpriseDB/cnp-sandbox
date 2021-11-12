@@ -1,4 +1,7 @@
-You can now deploy a cluster as follows:
+
+Now, you can deploy a cluster or run a benchmark by using `cnp-bench`.
+
+To deploy an example cluster run:
 
 kubectl apply -f - <<EOF
 ---
@@ -20,15 +23,17 @@ spec:
 {{- end }}
 EOF
 
-And access Grafana with the following credentials:
+Instead, to run a benchmark, you can use `cnp-bench` (https://github.com/EnterpriseDB/cnp-bench).
 
-username: "admin"
-password: "{{ index .Values "kube-prometheus-stack" "grafana" "adminPassword" }}"
-
-By executing the following command:
+To access the dedicated Grafana dashboard ("Cloud Native PostgreSQL"), run the following command:
 
 kubectl port-forward svc/{{.Release.Name}}-grafana 3000:80
 
-and going to:
+Then visit the following URL:
 
 http://localhost:3000
+
+You can log in using the following credentials:
+
+username: "admin"
+password: "{{ index .Values "kube-prometheus-stack" "grafana" "adminPassword" }}"
