@@ -1,0 +1,34 @@
+apiVersion: v1
+entries:
+  cnp-sandbox:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-11-12T14:19:25.34035352Z"
+    dependencies:
+    - condition: cloud-native-postgresql.enabled
+      name: cloud-native-postgresql
+      repository: https://enterprisedb.github.io/cloud-native-postgresql-helm/
+      version: 0.8.0
+    - condition: kube-prometheus-stack.enabled
+      name: kube-prometheus-stack
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 19.2.2
+    description: A sandbox for Cloud Native PostgreSQL
+    digest: 5dc4dcaf712c94a19d1d147e7300d56f847def79eeecf4c76e44b4714cccdfc3
+    home: https://www.enterprisedb.com/products/postgresql-on-kubernetes-ha-clusters-k8s-containers-scalable
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - monitoring
+    maintainers:
+    - email: philippe.scorsolini@enterprisedb.com
+      name: phisco
+    name: cnp-sandbox
+    sources:
+    - https://github.com/EnterpriseDB/cnp-sandbox
+    type: application
+    urls:
+    - https://EnterpriseDB.github.io/cnp-sandbox/cnp-sandbox-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-11-12T14:19:25.310929196Z"
