@@ -21,7 +21,7 @@ metadata:
     k8s.enterprisedb.io/reload: ""
     {{- include "cnp-sandbox.labels" . | nindent 4 }}
 data:
-  custom-queries: |
+  queries: |
     backends:
       query: |
        SELECT sa.datname
