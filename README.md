@@ -28,14 +28,25 @@ provided Grafana dashboard.
 
 ## Deployment
 
-You can deploy Cloud Native PostgreSQL Sandbox with:
+Deployment using the latest release:
 
 ```console
-make sandbox-deploy
+helm repo add cnp-sandbox https://enterprisedb.github.io/cnp-sandbox/
+helm repo update
+helm upgrade --install cnp-sandbox \
+  cnp-sandbox/cnp-sandbox
 ```
 
 Then simply follow the instructions that will appear on the terminal once the
 installation is completed.
+
+#### Deployment from local source
+
+You can deploy Cloud Native PostgreSQL Sandbox from local source with:
+
+```console
+make sandbox-deploy
+```
 
 You can remove the installed sandbox by running:
 
