@@ -22,13 +22,13 @@
   "fiscalYearStartMonth": 0,
   "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1635849431168,
+  "iteration": 1637064390546,
   "links": [],
   "liveNow": false,
   "panels": [
     {
       "collapsed": false,
-      "datasource": null,
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -41,7 +41,7 @@
       "type": "row"
     },
     {
-      "datasource": null,
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 3,
@@ -70,7 +70,7 @@
       "type": "text"
     },
     {
-      "datasource": null,
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 2,
@@ -98,7 +98,7 @@
       "type": "text"
     },
     {
-      "datasource": null,
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 4,
@@ -126,7 +126,7 @@
       "type": "text"
     },
     {
-      "datasource": null,
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 5,
@@ -154,7 +154,7 @@
       "type": "text"
     },
     {
-      "datasource": null,
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 3,
@@ -182,11 +182,11 @@
       "type": "text"
     },
     {
-      "datasource": null,
+      "datasource": "${DataSource}",
       "description": "",
       "gridPos": {
         "h": 1,
-        "w": 5,
+        "w": 3,
         "x": 17,
         "y": 1
       },
@@ -211,7 +211,35 @@
       "type": "text"
     },
     {
-      "datasource": null,
+      "datasource": "${DataSource}",
+      "gridPos": {
+        "h": 1,
+        "w": 2,
+        "x": 20,
+        "y": 1
+      },
+      "id": 313,
+      "options": {
+        "content": "",
+        "mode": "html"
+      },
+      "pluginVersion": "8.2.1",
+      "repeatDirection": "v",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "kube_pod_container_status_ready{container=\"postgres\",namespace=~\"$namespace\",pod=~\"$instances\"}",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "{{pod}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Started",
+      "type": "text"
+    },
+    {
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 2,
@@ -239,7 +267,7 @@
       "type": "text"
     },
     {
-      "datasource": null,
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 3,
         "w": 3,
@@ -267,7 +295,7 @@
       "type": "text"
     },
     {
-      "datasource": null,
+      "datasource": "${DataSource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -342,7 +370,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "${DataSource}",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -421,7 +449,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "${DataSource}",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -484,7 +512,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "${DataSource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -568,7 +596,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": null,
+      "datasource": "${DataSource}",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -636,7 +664,7 @@
       "type": "gauge"
     },
     {
-      "datasource": null,
+      "datasource": "${DataSource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -668,7 +696,7 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 5,
+        "w": 3,
         "x": 17,
         "y": 2
       },
@@ -702,7 +730,70 @@
       "type": "bargauge"
     },
     {
-      "datasource": null,
+      "datasource": "${DataSource}",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              }
+            ]
+          },
+          "unit": "dateTimeFromNow"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 2,
+        "x": 20,
+        "y": 2
+      },
+      "id": 314,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "value"
+      },
+      "pluginVersion": "8.2.1",
+      "repeat": "instances",
+      "repeatDirection": "v",
+      "targets": [
+        {
+          "exemplar": false,
+          "expr": "cnp_pg_postmaster_start_time{namespace=~\"$namespace\",pod=~\"$instances\"}*1000",
+          "format": "time_series",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "datasource": "${DataSource}",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -766,7 +857,7 @@
     },
     {
       "collapsed": true,
-      "datasource": null,
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -776,12 +867,12 @@
       "id": 41,
       "panels": [
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "gridPos": {
             "h": 1,
             "w": 3,
             "x": 0,
-            "y": 2
+            "y": 6
           },
           "id": 187,
           "options": {
@@ -805,12 +896,12 @@
           "type": "text"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "gridPos": {
             "h": 1,
             "w": 3,
             "x": 3,
-            "y": 2
+            "y": 6
           },
           "id": 183,
           "options": {
@@ -833,12 +924,12 @@
           "type": "text"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "gridPos": {
             "h": 1,
             "w": 3,
             "x": 6,
-            "y": 2
+            "y": 6
           },
           "id": 184,
           "options": {
@@ -861,12 +952,12 @@
           "type": "text"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "gridPos": {
             "h": 1,
             "w": 3,
             "x": 9,
-            "y": 2
+            "y": 6
           },
           "id": 185,
           "options": {
@@ -889,12 +980,12 @@
           "type": "text"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "gridPos": {
             "h": 1,
             "w": 3,
             "x": 12,
-            "y": 2
+            "y": 6
           },
           "id": 186,
           "options": {
@@ -917,12 +1008,12 @@
           "type": "text"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "gridPos": {
             "h": 1,
             "w": 3,
             "x": 15,
-            "y": 2
+            "y": 6
           },
           "id": 188,
           "options": {
@@ -945,12 +1036,12 @@
           "type": "text"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "gridPos": {
             "h": 1,
             "w": 3,
             "x": 18,
-            "y": 2
+            "y": 6
           },
           "id": 189,
           "options": {
@@ -973,12 +1064,12 @@
           "type": "text"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "gridPos": {
             "h": 1,
             "w": 3,
             "x": 21,
-            "y": 2
+            "y": 6
           },
           "id": 190,
           "options": {
@@ -1001,12 +1092,12 @@
           "type": "text"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "gridPos": {
             "h": 3,
             "w": 3,
             "x": 0,
-            "y": 3
+            "y": 7
           },
           "id": 86,
           "options": {
@@ -1029,7 +1120,7 @@
           "type": "text"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1052,7 +1143,7 @@
             "h": 3,
             "w": 3,
             "x": 3,
-            "y": 3
+            "y": 7
           },
           "id": 30,
           "options": {
@@ -1086,7 +1177,7 @@
           "type": "stat"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -1111,7 +1202,7 @@
             "h": 3,
             "w": 3,
             "x": 6,
-            "y": 3
+            "y": 7
           },
           "id": 24,
           "options": {
@@ -1145,7 +1236,7 @@
           "type": "stat"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -1170,7 +1261,7 @@
             "h": 3,
             "w": 3,
             "x": 9,
-            "y": 3
+            "y": 7
           },
           "id": 57,
           "options": {
@@ -1204,7 +1295,7 @@
           "type": "stat"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -1229,7 +1320,7 @@
             "h": 3,
             "w": 3,
             "x": 12,
-            "y": 3
+            "y": 7
           },
           "id": 26,
           "options": {
@@ -1263,7 +1354,7 @@
           "type": "stat"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1287,7 +1378,7 @@
             "h": 3,
             "w": 3,
             "x": 15,
-            "y": 3
+            "y": 7
           },
           "id": 47,
           "options": {
@@ -1321,7 +1412,7 @@
           "type": "stat"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1345,7 +1436,7 @@
             "h": 3,
             "w": 3,
             "x": 18,
-            "y": 3
+            "y": 7
           },
           "id": 48,
           "options": {
@@ -1379,7 +1470,7 @@
           "type": "stat"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1403,7 +1494,7 @@
             "h": 3,
             "w": 3,
             "x": 21,
-            "y": 3
+            "y": 7
           },
           "id": 56,
           "options": {
@@ -1437,7 +1528,7 @@
           "type": "stat"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1465,7 +1556,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 12
+            "y": 10
           },
           "id": 150,
           "options": {
@@ -1533,7 +1624,7 @@
     },
     {
       "collapsed": true,
-      "datasource": null,
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1547,14 +1638,14 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "${DataSource}",
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
             "h": 7,
             "w": 12,
             "x": 0,
-            "y": 3
+            "y": 7
           },
           "hiddenSeries": false,
           "id": 273,
@@ -1652,14 +1743,14 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": null,
+          "datasource": "${DataSource}",
           "fill": 2,
           "fillGradient": 0,
           "gridPos": {
             "h": 7,
             "w": 12,
             "x": 12,
-            "y": 3
+            "y": 7
           },
           "hiddenSeries": false,
           "id": 275,
@@ -1776,7 +1867,7 @@
           }
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -1828,7 +1919,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 10
+            "y": 14
           },
           "id": 39,
           "options": {
@@ -1862,7 +1953,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1917,7 +2008,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 18
+            "y": 22
           },
           "id": 50,
           "options": {
@@ -1951,7 +2042,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -2008,7 +2099,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 18
+            "y": 22
           },
           "id": 4,
           "options": {
@@ -2034,7 +2125,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -2090,7 +2181,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 26
+            "y": 30
           },
           "id": 55,
           "options": {
@@ -2118,7 +2209,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -2174,7 +2265,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 26
+            "y": 30
           },
           "id": 54,
           "options": {
@@ -2205,7 +2296,7 @@
     },
     {
       "collapsed": true,
-      "datasource": null,
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2215,7 +2306,7 @@
       "id": 35,
       "panels": [
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2328,7 +2419,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2417,7 +2508,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2496,7 +2587,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2584,7 +2675,7 @@
     },
     {
       "collapsed": true,
-      "datasource": null,
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2594,7 +2685,7 @@
       "id": 37,
       "panels": [
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2649,7 +2740,7 @@
             "h": 8,
             "w": 8,
             "x": 0,
-            "y": 5
+            "y": 53
           },
           "id": 6,
           "options": {
@@ -2683,7 +2774,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2738,7 +2829,7 @@
             "h": 8,
             "w": 8,
             "x": 8,
-            "y": 5
+            "y": 53
           },
           "id": 52,
           "options": {
@@ -2772,7 +2863,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -2829,7 +2920,7 @@
             "h": 8,
             "w": 8,
             "x": 16,
-            "y": 5
+            "y": 53
           },
           "id": 53,
           "options": {
@@ -2860,7 +2951,7 @@
     },
     {
       "collapsed": true,
-      "datasource": null,
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2870,7 +2961,7 @@
       "id": 18,
       "panels": [
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2957,7 +3048,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3040,7 +3131,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3123,7 +3214,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -3211,7 +3302,7 @@
     },
     {
       "collapsed": true,
-      "datasource": null,
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -3233,12 +3324,12 @@
             "mode": "spectrum"
           },
           "dataFormat": "timeseries",
-          "datasource": null,
+          "datasource": "${DataSource}",
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 31
+            "y": 63
           },
           "heatmap": {},
           "hideZeroBuckets": false,
@@ -3270,7 +3361,7 @@
           "xBucketSize": null,
           "yAxis": {
             "decimals": null,
-            "format": "short",
+            "format": "s",
             "logBase": 1,
             "max": null,
             "min": null,
@@ -3282,7 +3373,7 @@
           "yBucketSize": null
         },
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3337,7 +3428,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 31
+            "y": 63
           },
           "id": 235,
           "options": {
@@ -3368,7 +3459,7 @@
     },
     {
       "collapsed": true,
-      "datasource": null,
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -3378,7 +3469,7 @@
       "id": 239,
       "panels": [
         {
-          "datasource": null,
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3434,7 +3525,7 @@
             "h": 6,
             "w": 8,
             "x": 0,
-            "y": 32
+            "y": 72
           },
           "id": 237,
           "options": {
@@ -3463,6 +3554,215 @@
       ],
       "title": "Backups",
       "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": "${DataSource}",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 18
+      },
+      "id": 293,
+      "panels": [
+        {
+          "datasource": "${DataSource}",
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": -1,
+                "drawStyle": "line",
+                "fillOpacity": 8,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "none"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 6,
+            "w": 5,
+            "x": 0,
+            "y": 79
+          },
+          "id": 295,
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom"
+            },
+            "tooltip": {
+              "mode": "multi"
+            }
+          },
+          "pluginVersion": "8.2.1",
+          "targets": [
+            {
+              "exemplar": true,
+              "expr": "cnp_pg_stat_bgwriter_checkpoints_req{namespace=~\"$namespace\",pod=~\"$instances\"}",
+              "format": "time_series",
+              "hide": false,
+              "instant": false,
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "req/{{pod}}",
+              "refId": "B"
+            },
+            {
+              "exemplar": true,
+              "expr": "cnp_pg_stat_bgwriter_checkpoints_timed{namespace=~\"$namespace\",pod=~\"$instances\"}",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "timed/{{pod}}",
+              "refId": "A"
+            }
+          ],
+          "title": "Requested/Timed",
+          "type": "timeseries"
+        },
+        {
+          "datasource": "${DataSource}",
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": -1,
+                "drawStyle": "line",
+                "fillOpacity": 8,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "ms"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 6,
+            "w": 5,
+            "x": 5,
+            "y": 79
+          },
+          "id": 296,
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom"
+            },
+            "tooltip": {
+              "mode": "multi"
+            }
+          },
+          "pluginVersion": "8.2.1",
+          "targets": [
+            {
+              "exemplar": true,
+              "expr": "cnp_pg_stat_bgwriter_checkpoint_write_time{namespace=~\"$namespace\",pod=~\"$instances\"}",
+              "format": "time_series",
+              "hide": false,
+              "instant": false,
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "write/{{pod}}",
+              "refId": "B"
+            },
+            {
+              "exemplar": true,
+              "expr": "cnp_pg_stat_bgwriter_checkpoint_sync_time{namespace=~\"$namespace\",pod=~\"$instances\"}",
+              "format": "time_series",
+              "interval": "",
+              "intervalFactor": 1,
+              "legendFormat": "sync/{{pod}}",
+              "refId": "A"
+            }
+          ],
+          "title": "Write/Sync time",
+          "type": "timeseries"
+        }
+      ],
+      "title": "Checkpoints",
+      "type": "row"
     }
   ],
   "refresh": "30s",
@@ -3472,13 +3772,33 @@
   "templating": {
     "list": [
       {
+        "current": {
+          "selected": false,
+          "text": "Prometheus",
+          "value": "Prometheus"
+        },
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": "Data Source",
+        "multi": false,
+        "name": "DataSource",
+        "options": [],
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "type": "datasource"
+      },
+      {
         "allValue": null,
         "current": {
           "selected": false,
           "text": "default",
           "value": "default"
         },
-        "datasource": null,
+        "datasource": "${DataSource}",
         "definition": "cnp_collector_up",
         "description": null,
         "error": null,
@@ -3505,7 +3825,7 @@
           "text": "cnp-sandbox",
           "value": "cnp-sandbox"
         },
-        "datasource": null,
+        "datasource": "${DataSource}",
         "definition": "cnp_collector_up{namespace=~\"$namespace\"}",
         "description": null,
         "error": null,
@@ -3536,7 +3856,7 @@
             "$__all"
           ]
         },
-        "datasource": null,
+        "datasource": "${DataSource}",
         "definition": "cnp_collector_up{namespace=~\"$namespace\",pod=~\"$cluster-.*\"}",
         "description": null,
         "error": null,
@@ -3559,7 +3879,7 @@
     ]
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {
@@ -3568,5 +3888,5 @@
   "timezone": "",
   "title": "Cloud Native PostgreSQL",
   "uid": "z7FCA4Nnk",
-  "version": 8
+  "version": 2
 }
