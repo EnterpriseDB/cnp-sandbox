@@ -15,8 +15,9 @@ spec:
   storage:
     size: 1Gi
 
-{{- if not (index .Values "cloud-native-postgresql" "enabled") }}
   monitoring:
+    enablePodMonitor: true
+{{- if not (index .Values "cloud-native-postgresql" "enabled") }}
     customQueriesConfigMap:
       - name: default-monitoring-queries
         key: custom-queries
