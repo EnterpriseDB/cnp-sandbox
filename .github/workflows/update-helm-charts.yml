@@ -1,0 +1,36 @@
+name: update-helm-charts
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 1 * * *'
+
+jobs:
+  update_helm_chart:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      -
+        id: latest-version
+        name: Get the latest version of HELM chart
+        run: |
+          raw_version=$(curl -s https://api.github.com/repos/Enterprisedb/cloud-native-postgresql-helm/tags | jq -r 'first(.[]) | .name')
+          echo "::set-output name=new_version::${raw_version#v}"
+      -
+        name: Install YQ
+        uses: mikefarah/yq@master
+        with:
+          cmd: yq e -i '.dependencies.[0].version="'${{ steps.latest-version.outputs.new_version }}'"' charts/cnp-sandbox/Chart.yaml
+      -
+        name: Create update pull request
+        uses: gr2m/create-or-update-pull-request-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          title: "chore: update helm charts version"
+          body: "Update Helm Charts version for cnp"
+          branch: "helm-chart-update"
+          author: "helm-chart-updater <helm-chart-updater@users.noreply.github.com>"
+          path: "charts/cnp-sandbox/"
+          commit-message: "chore: update helm chart version"
