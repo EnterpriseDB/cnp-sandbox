@@ -1,7 +1,9 @@
 name: update-helm-charts
 
 on:
-  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 1 * * *'
 
 jobs:
   update_helm_chart:
@@ -19,7 +21,7 @@ jobs:
         name: Install YQ
         uses: mikefarah/yq@master
         with:
-          cmd: yq e '.dependencies.[0].version="'${{ steps.latest-version.outputs.new_version }}'"' charts/cnp-sandbox/Chart.yaml
+          cmd: yq e -i '.dependencies.[0].version="'${{ steps.latest-version.outputs.new_version }}'"' charts/cnp-sandbox/Chart.yaml
       -
         name: Create update pull request
         uses: gr2m/create-or-update-pull-request-action@v1
