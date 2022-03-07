@@ -28,7 +28,9 @@ A sandbox for Cloud Native PostgreSQL
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | cloud-native-postgresql | object | `{"config":{"create":true,"data":{"MONITORING_QUERIES_CONFIGMAP":"default-monitoring-queries"}},"enabled":true}` | here you can pass the whole values directly to the cloud-native-postgresql chart |
-| kube-prometheus-stack | object | `{"alertmanager":{"enabled":false},"enabled":true,"grafana":{"adminPassword":"prom-operator","enabled":true},"prometheus":{"prometheusSpec":{"podMonitorSelectorNilUsesHelmValues":false,"probeSelectorNilUsesHelmValues":false,"ruleSelectorNilUsesHelmValues":false,"serviceMonitorSelectorNilUsesHelmValues":false}}}` | here you can pass the whole values directly to the kube-prometheus-stack chart |
+| defaultAlerts | bool | `true` |  |
+| defaultDashboard | bool | `true` |  |
+| kube-prometheus-stack | object | `{"alertmanager":{"enabled":true},"defaultRules":{"create":true,"rules":{"alertmanager":false,"configReloaders":false,"etcd":false,"general":false,"k8s":true,"kubeApiserver":false,"kubeApiserverAvailability":false,"kubeApiserverSlos":false,"kubePrometheusGeneral":false,"kubePrometheusNodeRecording":false,"kubeProxy":false,"kubeScheduler":false,"kubeStateMetrics":false,"kubelet":true,"kubernetesApps":false,"kubernetesResources":false,"kubernetesStorage":false,"kubernetesSystem":false,"network":false,"node":true,"nodeExporterAlerting":false,"nodeExporterRecording":true,"prometheus":false,"prometheusOperator":false}},"enabled":true,"grafana":{"adminPassword":"prom-operator","defaultDashboardsEnabled":false,"enabled":true},"kubeControllerManager":{"enabled":false},"nodeExporter":{"enabled":false},"prometheus":{"prometheusSpec":{"podMonitorSelectorNilUsesHelmValues":false,"probeSelectorNilUsesHelmValues":false,"ruleSelectorNilUsesHelmValues":false,"serviceMonitorSelectorNilUsesHelmValues":false}}}` | here you can pass the whole values directly to the kube-prometheus-stack chart |
 | kube-prometheus-stack.grafana.adminPassword | string | `"prom-operator"` | the grafana admin password |
 
 ----------------------------------------------
