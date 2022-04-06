@@ -20,7 +20,7 @@ A sandbox for Cloud Native PostgreSQL
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://enterprisedb.github.io/cloud-native-postgresql-helm/ | cloud-native-postgresql | 0.11.0 |
+| https://enterprisedb.github.io/cloud-native-postgresql-helm/ | cloud-native-postgresql | 0.12.0 |
 | https://prometheus-community.github.io/helm-charts | kube-prometheus-stack | 32.2.1 |
 
 ## Values
