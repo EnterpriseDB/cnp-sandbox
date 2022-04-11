@@ -3541,7 +3541,7 @@
           "targets": [
             {
               "exemplar": true,
-              "expr": "cnp_collector_first_recoverability_point{namespace=~\"$namespace\",pod=~\"$instances\"} > 0",
+              "expr": "cnp_collector_first_recoverability_point{namespace=~\"$namespace\",pod=~\"$instances\"}*1000 > 0",
               "format": "time_series",
               "interval": "",
               "legendFormat": "{{pod}}",
