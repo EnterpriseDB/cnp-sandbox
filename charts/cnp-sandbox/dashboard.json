@@ -20,16 +20,15 @@
   },
   "editable": true,
   "fiscalYearStartMonth": 0,
+  "gnetId": null,
   "graphTooltip": 0,
-  "iteration": 1649672290214,
+  "iteration": 1637064390546,
   "links": [],
   "liveNow": false,
   "panels": [
     {
       "collapsed": false,
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -42,9 +41,7 @@
       "type": "row"
     },
     {
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 3,
@@ -56,7 +53,7 @@
         "content": "",
         "mode": "html"
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.2.1",
       "repeatDirection": "v",
       "targets": [
         {
@@ -73,9 +70,7 @@
       "type": "text"
     },
     {
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 2,
@@ -87,7 +82,7 @@
         "content": "",
         "mode": "html"
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.2.1",
       "repeatDirection": "v",
       "targets": [
         {
@@ -103,9 +98,7 @@
       "type": "text"
     },
     {
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 4,
@@ -117,7 +110,7 @@
         "content": "",
         "mode": "html"
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.2.1",
       "repeatDirection": "v",
       "targets": [
         {
@@ -133,9 +126,7 @@
       "type": "text"
     },
     {
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 5,
@@ -147,7 +138,7 @@
         "content": "",
         "mode": "html"
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.2.1",
       "repeatDirection": "v",
       "targets": [
         {
@@ -163,9 +154,7 @@
       "type": "text"
     },
     {
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 3,
@@ -177,7 +166,7 @@
         "content": "",
         "mode": "html"
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.2.1",
       "repeatDirection": "v",
       "targets": [
         {
@@ -193,9 +182,7 @@
       "type": "text"
     },
     {
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "description": "",
       "gridPos": {
         "h": 1,
@@ -208,7 +195,7 @@
         "content": "",
         "mode": "html"
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.2.1",
       "repeatDirection": "v",
       "targets": [
         {
@@ -224,9 +211,7 @@
       "type": "text"
     },
     {
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 2,
@@ -238,7 +223,7 @@
         "content": "",
         "mode": "html"
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.2.1",
       "repeatDirection": "v",
       "targets": [
         {
@@ -254,9 +239,7 @@
       "type": "text"
     },
     {
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 2,
@@ -268,7 +251,7 @@
         "content": "",
         "mode": "html"
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.2.1",
       "repeatDirection": "v",
       "targets": [
         {
@@ -284,9 +267,7 @@
       "type": "text"
     },
     {
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 3,
         "w": 3,
@@ -298,7 +279,7 @@
         "content": "<table style=\"width:100%; height:100%;border:0px solid black;\">\n  <td style=\"text-align: center;vertical-align: middle;border:0px solid black; \"><p style=\"font-weight: bold;\">$instances</p>\n  </td>\n</table>",
         "mode": "html"
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.2.1",
       "repeat": "instances",
       "repeatDirection": "v",
       "targets": [
@@ -314,9 +295,7 @@
       "type": "text"
     },
     {
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -375,7 +354,7 @@
         "text": {},
         "textMode": "value"
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.2.1",
       "repeat": "instances",
       "repeatDirection": "v",
       "targets": [
@@ -391,9 +370,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -455,7 +432,7 @@
         "text": {},
         "textMode": "value"
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.2.1",
       "repeat": "instances",
       "repeatDirection": "v",
       "targets": [
@@ -472,9 +449,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -520,7 +495,7 @@
         "text": {},
         "textMode": "value"
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.2.1",
       "repeat": "instances",
       "repeatDirection": "v",
       "targets": [
@@ -537,9 +512,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -623,9 +596,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -677,7 +648,7 @@
         "showThresholdMarkers": true,
         "text": {}
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.2.1",
       "repeat": "instances",
       "repeatDirection": "v",
       "targets": [
@@ -693,9 +664,7 @@
       "type": "gauge"
     },
     {
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -745,7 +714,7 @@
         "showUnfilled": true,
         "text": {}
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.2.1",
       "repeat": "instances",
       "repeatDirection": "v",
       "targets": [
@@ -761,9 +730,7 @@
       "type": "bargauge"
     },
     {
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -806,7 +773,7 @@
         "text": {},
         "textMode": "value"
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.2.1",
       "repeat": "instances",
       "repeatDirection": "v",
       "targets": [
@@ -826,9 +793,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -871,7 +836,7 @@
         "text": {},
         "textMode": "value"
       },
-      "pluginVersion": "8.3.5",
+      "pluginVersion": "8.2.1",
       "repeat": "instances",
       "repeatDirection": "v",
       "targets": [
@@ -892,21 +857,17 @@
     },
     {
       "collapsed": true,
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 5
+        "y": 11
       },
       "id": 41,
       "panels": [
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "gridPos": {
             "h": 1,
             "w": 3,
@@ -935,9 +896,7 @@
           "type": "text"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "gridPos": {
             "h": 1,
             "w": 3,
@@ -965,9 +924,7 @@
           "type": "text"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "gridPos": {
             "h": 1,
             "w": 3,
@@ -995,9 +952,7 @@
           "type": "text"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "gridPos": {
             "h": 1,
             "w": 3,
@@ -1025,9 +980,7 @@
           "type": "text"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "gridPos": {
             "h": 1,
             "w": 3,
@@ -1055,9 +1008,7 @@
           "type": "text"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "gridPos": {
             "h": 1,
             "w": 3,
@@ -1085,9 +1036,7 @@
           "type": "text"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "gridPos": {
             "h": 1,
             "w": 3,
@@ -1115,9 +1064,7 @@
           "type": "text"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "gridPos": {
             "h": 1,
             "w": 3,
@@ -1145,9 +1092,7 @@
           "type": "text"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "gridPos": {
             "h": 3,
             "w": 3,
@@ -1175,9 +1120,7 @@
           "type": "text"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1188,7 +1131,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "dark-purple"
+                    "color": "dark-purple",
+                    "value": null
                   }
                 ]
               }
@@ -1233,9 +1177,7 @@
           "type": "stat"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -1247,7 +1189,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "dark-purple"
+                    "color": "dark-purple",
+                    "value": null
                   }
                 ]
               },
@@ -1293,9 +1236,7 @@
           "type": "stat"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -1307,7 +1248,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "dark-purple"
+                    "color": "dark-purple",
+                    "value": null
                   }
                 ]
               },
@@ -1353,9 +1295,7 @@
           "type": "stat"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -1367,7 +1307,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "dark-purple"
+                    "color": "dark-purple",
+                    "value": null
                   }
                 ]
               },
@@ -1413,9 +1354,7 @@
           "type": "stat"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1426,7 +1365,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "dark-purple"
+                    "color": "dark-purple",
+                    "value": null
                   }
                 ]
               },
@@ -1472,9 +1412,7 @@
           "type": "stat"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1485,7 +1423,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "dark-purple"
+                    "color": "dark-purple",
+                    "value": null
                   }
                 ]
               },
@@ -1531,9 +1470,7 @@
           "type": "stat"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1544,7 +1481,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "dark-purple"
+                    "color": "dark-purple",
+                    "value": null
                   }
                 ]
               },
@@ -1590,9 +1528,7 @@
           "type": "stat"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -1608,7 +1544,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "dark-purple"
+                    "color": "dark-purple",
+                    "value": null
                   }
                 ]
               }
@@ -1687,14 +1624,12 @@
     },
     {
       "collapsed": true,
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 6
+        "y": 12
       },
       "id": 10,
       "panels": [
@@ -1703,9 +1638,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -1749,6 +1682,7 @@
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "{{pod}}",
+              "legendLink": null,
               "refId": "A",
               "step": 10
             },
@@ -1762,7 +1696,9 @@
             }
           ],
           "thresholds": [],
+          "timeFrom": null,
           "timeRegions": [],
+          "timeShift": null,
           "title": "CPU Usage",
           "tooltip": {
             "shared": true,
@@ -1771,7 +1707,9 @@
           },
           "type": "graph",
           "xaxis": {
+            "buckets": null,
             "mode": "time",
+            "name": null,
             "show": true,
             "values": []
           },
@@ -1779,19 +1717,25 @@
             {
               "$$hashKey": "object:189",
               "format": "short",
+              "label": null,
               "logBase": 1,
+              "max": null,
               "min": 0,
               "show": true
             },
             {
               "$$hashKey": "object:190",
               "format": "short",
+              "label": null,
               "logBase": 1,
+              "max": null,
+              "min": null,
               "show": false
             }
           ],
           "yaxis": {
-            "align": false
+            "align": false,
+            "alignLevel": null
           }
         },
         {
@@ -1799,9 +1743,7 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "fill": 2,
           "fillGradient": 0,
           "gridPos": {
@@ -1868,6 +1810,7 @@
               "interval": "",
               "intervalFactor": 2,
               "legendFormat": "{{pod}}",
+              "legendLink": null,
               "refId": "A",
               "step": 10
             },
@@ -1881,7 +1824,9 @@
             }
           ],
           "thresholds": [],
+          "timeFrom": null,
           "timeRegions": [],
+          "timeShift": null,
           "title": "Memory Usage (w/o cache)",
           "tooltip": {
             "shared": true,
@@ -1890,7 +1835,9 @@
           },
           "type": "graph",
           "xaxis": {
+            "buckets": null,
             "mode": "time",
+            "name": null,
             "show": true,
             "values": []
           },
@@ -1898,25 +1845,29 @@
             {
               "$$hashKey": "object:246",
               "format": "bytes",
+              "label": null,
               "logBase": 1,
+              "max": null,
               "min": 0,
               "show": true
             },
             {
               "$$hashKey": "object:247",
               "format": "short",
+              "label": null,
               "logBase": 1,
+              "max": null,
+              "min": null,
               "show": false
             }
           ],
           "yaxis": {
-            "align": false
+            "align": false,
+            "alignLevel": null
           }
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -1956,7 +1907,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               }
@@ -2001,9 +1953,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2042,7 +1992,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2091,9 +2042,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -2133,7 +2082,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2175,9 +2125,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -2217,7 +2165,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2260,9 +2209,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -2302,7 +2249,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2348,21 +2296,17 @@
     },
     {
       "collapsed": true,
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 7
+        "y": 13
       },
       "id": 35,
       "panels": [
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2401,7 +2345,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2474,9 +2419,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2515,7 +2458,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2564,9 +2508,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2605,7 +2547,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   }
                 ]
               },
@@ -2644,9 +2587,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2685,7 +2626,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2733,21 +2675,17 @@
     },
     {
       "collapsed": true,
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 8
+        "y": 14
       },
       "id": 37,
       "panels": [
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2786,7 +2724,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2835,9 +2774,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -2876,7 +2813,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2925,9 +2863,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -2967,7 +2903,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -3014,21 +2951,17 @@
     },
     {
       "collapsed": true,
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 9
+        "y": 15
       },
       "id": 18,
       "panels": [
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3067,7 +3000,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "#EAB839",
@@ -3114,9 +3048,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3155,7 +3087,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -3198,9 +3131,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3239,7 +3170,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -3282,9 +3214,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -3324,7 +3254,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -3371,19 +3302,20 @@
     },
     {
       "collapsed": true,
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 10
+        "y": 16
       },
       "id": 231,
       "panels": [
         {
-          "cards": {},
+          "cards": {
+            "cardPadding": null,
+            "cardRound": null
+          },
           "color": {
             "cardColor": "#b4ff00",
             "colorScale": "sqrt",
@@ -3392,9 +3324,7 @@
             "mode": "spectrum"
           },
           "dataFormat": "timeseries",
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "gridPos": {
             "h": 8,
             "w": 12,
@@ -3427,17 +3357,23 @@
           "xAxis": {
             "show": true
           },
+          "xBucketNumber": null,
+          "xBucketSize": null,
           "yAxis": {
+            "decimals": null,
             "format": "s",
             "logBase": 1,
-            "show": true
+            "max": null,
+            "min": null,
+            "show": true,
+            "splitFactor": null
           },
-          "yBucketBound": "auto"
+          "yBucketBound": "auto",
+          "yBucketNumber": null,
+          "yBucketSize": null
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3476,7 +3412,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -3522,22 +3459,17 @@
     },
     {
       "collapsed": true,
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 11
+        "y": 17
       },
       "id": 239,
       "panels": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -3593,7 +3525,7 @@
             "h": 6,
             "w": 8,
             "x": 0,
-            "y": 12
+            "y": 72
           },
           "id": 237,
           "options": {
@@ -3608,12 +3540,8 @@
           },
           "targets": [
             {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "PBFA97CFB590B2093"
-              },
               "exemplar": true,
-              "expr": "cnp_collector_first_recoverability_point{namespace=~\"$namespace\",pod=~\"$instances\"}*1000 > 0",
+              "expr": "cnp_collector_first_recoverability_point{namespace=~\"$namespace\",pod=~\"$instances\"} > 0",
               "format": "time_series",
               "interval": "",
               "legendFormat": "{{pod}}",
@@ -3629,21 +3557,17 @@
     },
     {
       "collapsed": true,
-      "datasource": {
-        "uid": "${DataSource}"
-      },
+      "datasource": "${DataSource}",
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 12
+        "y": 18
       },
       "id": 293,
       "panels": [
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -3700,7 +3624,7 @@
             "h": 6,
             "w": 5,
             "x": 0,
-            "y": 13
+            "y": 79
           },
           "id": 295,
           "options": {
@@ -3740,9 +3664,7 @@
           "type": "timeseries"
         },
         {
-          "datasource": {
-            "uid": "${DataSource}"
-          },
+          "datasource": "${DataSource}",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -3799,7 +3721,7 @@
             "h": 6,
             "w": 5,
             "x": 5,
-            "y": 13
+            "y": 79
           },
           "id": 296,
           "options": {
@@ -3844,7 +3766,7 @@
     }
   ],
   "refresh": "30s",
-  "schemaVersion": 34,
+  "schemaVersion": 31,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -3855,6 +3777,8 @@
           "text": "Prometheus",
           "value": "Prometheus"
         },
+        "description": null,
+        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": "Data Source",
@@ -3868,19 +3792,19 @@
         "type": "datasource"
       },
       {
+        "allValue": null,
         "current": {
-          "isNone": true,
           "selected": false,
-          "text": "None",
-          "value": ""
+          "text": "default",
+          "value": "default"
         },
-        "datasource": {
-          "type": "prometheus",
-          "uid": "${DataSource}"
-        },
+        "datasource": "${DataSource}",
         "definition": "cnp_collector_up",
+        "description": null,
+        "error": null,
         "hide": 0,
         "includeAll": false,
+        "label": null,
         "multi": false,
         "name": "namespace",
         "options": [],
@@ -3895,19 +3819,19 @@
         "type": "query"
       },
       {
+        "allValue": null,
         "current": {
-          "isNone": true,
           "selected": false,
-          "text": "None",
-          "value": ""
+          "text": "cnp-sandbox",
+          "value": "cnp-sandbox"
         },
-        "datasource": {
-          "type": "prometheus",
-          "uid": "${DataSource}"
-        },
+        "datasource": "${DataSource}",
         "definition": "cnp_collector_up{namespace=~\"$namespace\"}",
+        "description": null,
+        "error": null,
         "hide": 0,
         "includeAll": false,
+        "label": null,
         "multi": false,
         "name": "cluster",
         "options": [],
@@ -3922,6 +3846,7 @@
         "type": "query"
       },
       {
+        "allValue": null,
         "current": {
           "selected": true,
           "text": [
@@ -3931,13 +3856,13 @@
             "$__all"
           ]
         },
-        "datasource": {
-          "type": "prometheus",
-          "uid": "${DataSource}"
-        },
+        "datasource": "${DataSource}",
         "definition": "cnp_collector_up{namespace=~\"$namespace\",pod=~\"$cluster-.*\"}",
+        "description": null,
+        "error": null,
         "hide": 0,
         "includeAll": true,
+        "label": null,
         "multi": true,
         "name": "instances",
         "options": [],
@@ -3963,6 +3888,5 @@
   "timezone": "",
   "title": "Cloud Native PostgreSQL",
   "uid": "z7FCA4Nnk",
-  "version": 1,
-  "weekStart": ""
+  "version": 2
 }
