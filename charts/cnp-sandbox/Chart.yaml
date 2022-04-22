@@ -35,7 +35,7 @@ version: 0.4.0
 appVersion: "1.16.0"
 dependencies:
   - name: cloud-native-postgresql
-    version: "0.12.0"
+    version: "1.15.0"
     repository: https://enterprisedb.github.io/cloud-native-postgresql-helm/
     condition: cloud-native-postgresql.enabled
   - name: kube-prometheus-stack
