@@ -1,7 +1,7 @@
 # Sandbox for Cloud Native PostgreSQL
 
 Cloud Native PostgreSQL Sandbox, aka `cnp-sandbox`, is a Helm chart that
-sets up the following components inside a Kubernetes cluster:
+sets up the following components inside a **Kubernetes** cluster:
 
 - [Prometheus](https://prometheus.io/)
 - [Grafana](https://github.com/grafana/grafana)
@@ -16,6 +16,8 @@ environment. Do not use `cnp-sandbox` in a production environment, as we
 expect that Prometheus and Grafana are already part of that infrastructure:
 there you can install Cloud Native PostgreSQL, the suggested metrics and the
 provided Grafana dashboard.
+
+If you are using Openshift then this Helm chart will not work. The installation of the operator is different in Openshift; there it should be installed using [OLM](https://docs.openshift.com/container-platform/4.7/operators/understanding/olm/olm-understanding-olm.html). Additionally, the monitoring stack should be installed in Openshift using the associated Openshift installation methods for those applications.
 
 ![Example of dashboard](dashboard.png)
 
