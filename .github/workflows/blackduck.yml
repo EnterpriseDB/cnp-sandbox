@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  GOLANG_VERSION: "1.17.x"
+  GOLANG_VERSION: "1.18.x"
   GOPRIVATE: "github.com/EnterpriseDB"
 
 jobs:
