@@ -1,3 +1,4 @@
+# Scans codebase for open source vulnerabilities using Black Duck Scan.
 name: blackduck
 
 on:
