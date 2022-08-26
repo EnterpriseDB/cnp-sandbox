@@ -1,3 +1,7 @@
+# This workflow invokes Sonarqube Scan (scans for vulnerabilities, reports unit
+# test coverage and code duplication) on the codebase and when the triggering
+# event is a PR event ('opened', 'synchronize' or 'reopened'), the
+# 'edb-sonar-app' will report the scanning results in the comment of the PR.
 name: sonarqube
 on:
   pull_request:
