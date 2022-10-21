@@ -10,18 +10,18 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       -
         id: latest-version
         name: Get the latest version of HELM chart
         run: |
           raw_version=$(curl -s https://api.github.com/repos/Enterprisedb/cloud-native-postgresql-helm/tags | jq -r 'first(.[]) | .name')
-          echo "::set-output name=new_version::${raw_version#v}"
+          echo "NEW_VERSION=${raw_version#v}" >> $GITHUB_ENV
       -
         name: Install YQ
         uses: mikefarah/yq@master
         with:
-          cmd: yq e -i '.dependencies.[0].version="'${{ steps.latest-version.outputs.new_version }}'"' charts/cnp-sandbox/Chart.yaml
+          cmd: yq e -i '.dependencies.[0].version="'${{ env.NEW_VERSION }}'"' charts/cnp-sandbox/Chart.yaml
       -
         name: Create update pull request
         uses: gr2m/create-or-update-pull-request-action@v1
