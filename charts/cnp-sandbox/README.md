@@ -10,7 +10,7 @@ A sandbox for Cloud Native PostgreSQL
 
 | Name | Email | Url |
 | ---- | ------ | --- |
-| phisco | philippe.scorsolini@enterprisedb.com |  |
+| phisco | <p.scorsolini@gmail.com> |  |
 
 ## Source Code
 
