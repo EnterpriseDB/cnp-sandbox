@@ -1,9 +1,0 @@
-dependencies:
-- name: cloud-native-postgresql
-  repository: https://enterprisedb.github.io/cloud-native-postgresql-helm/
-  version: 0.12.0
-- name: kube-prometheus-stack
-  repository: https://prometheus-community.github.io/helm-charts
-  version: 32.2.1
-digest: sha256:7c0d3a0fee15bdbc96fed9e7dfc64bdbf59a3b1f32f3f67d855851c8172a6bff
-generated: "2022-03-29T11:20:52.399743+02:00"
